@@ -1,0 +1,28 @@
+name: ci
+
+on:
+  push:
+
+permissions:
+  contents: read
+
+jobs:
+  image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fake image build
+        shell: bash
+        run: |
+          DIGEST="sha256:$(git archive HEAD | sha256sum | cut -d' ' -f1)"
+          printf '%s\n' "$DIGEST" > digest.txt
+          {
+            echo "### Image digest"
+            echo
+            echo "\`$DIGEST\`"
+          } >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: image-digest
+          path: digest.txt
+          if-no-files-found: error
