@@ -1,0 +1,45 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      '@henosis/sdk':
+        specifier: github:henosis-playground/platform#path:packages/sdk
+        version: https://codeload.github.com/henosis-playground/platform/tar.gz/a910d2a1c86cc9d5302393a473c257634e47f81f#path:packages/sdk
+      '@henosis/service-a':
+        specifier: github:henosis-playground/service-a#path:henosis
+        version: https://codeload.github.com/henosis-playground/service-a/tar.gz/242e3cd508e3c1c8257721dba477d990141d46f7#path:henosis
+    devDependencies:
+      typescript:
+        specifier: ^5.9.0
+        version: 5.9.3
+
+packages:
+
+  '@henosis/sdk@https://codeload.github.com/henosis-playground/platform/tar.gz/a910d2a1c86cc9d5302393a473c257634e47f81f#path:packages/sdk':
+    resolution: {gitHosted: true, path: packages/sdk, tarball: https://codeload.github.com/henosis-playground/platform/tar.gz/a910d2a1c86cc9d5302393a473c257634e47f81f}
+    version: 0.0.0
+
+  '@henosis/service-a@https://codeload.github.com/henosis-playground/service-a/tar.gz/242e3cd508e3c1c8257721dba477d990141d46f7#path:henosis':
+    resolution: {gitHosted: true, path: henosis, tarball: https://codeload.github.com/henosis-playground/service-a/tar.gz/242e3cd508e3c1c8257721dba477d990141d46f7}
+    version: 0.0.0
+
+  typescript@5.9.3:
+    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
+snapshots:
+
+  '@henosis/sdk@https://codeload.github.com/henosis-playground/platform/tar.gz/a910d2a1c86cc9d5302393a473c257634e47f81f#path:packages/sdk': {}
+
+  '@henosis/service-a@https://codeload.github.com/henosis-playground/service-a/tar.gz/242e3cd508e3c1c8257721dba477d990141d46f7#path:henosis':
+    dependencies:
+      '@henosis/sdk': https://codeload.github.com/henosis-playground/platform/tar.gz/a910d2a1c86cc9d5302393a473c257634e47f81f#path:packages/sdk
+
+  typescript@5.9.3: {}

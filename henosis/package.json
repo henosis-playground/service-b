@@ -1,0 +1,20 @@
+{
+  "name": "@henosis/service-b",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "henosis": {
+    "component": "service-b",
+    "surface": true
+  },
+  "dependencies": {
+    "@henosis/sdk": "github:henosis-playground/platform#path:packages/sdk",
+    "@henosis/service-a": "github:henosis-playground/service-a#path:henosis"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.0"
+  }
+}
