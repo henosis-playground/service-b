@@ -1,5 +1,4 @@
 import { defineComponent, envName, h } from "@henosis/platform-mock";
-import serviceA from "@henosis/service-a";
 
 export default defineComponent({
   outputs: h.object({
@@ -8,6 +7,6 @@ export default defineComponent({
   }),
   build: (_ctx, env) => ({
     app: `https://service-b-${envName(env)}.henosis.example/app/metrics`,
-    upstream: serviceA.api,
+    upstream: "dont.care.net",
   }),
 });
