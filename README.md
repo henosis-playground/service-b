@@ -6,6 +6,7 @@ service-b depends on service-a through the Henosis v1 component workspace.
 
 - `GET /healthz` returns `ok`
 - `GET /` returns `{"service":"service-b"}`
+- Live verification exercises the gate-only queue.
 
 Run locally:
 
