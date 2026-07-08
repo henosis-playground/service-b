@@ -7,7 +7,7 @@ export default defineComponent({
     upstream: h.url(),
   }),
   build: (_ctx, env) => ({
-    app: `https://service-b-${envName(env)}.henosis.example/app/metrics?live=d15-d18`,
+    app: "not-a-url",
     upstream: serviceA.api,
   }),
 });
