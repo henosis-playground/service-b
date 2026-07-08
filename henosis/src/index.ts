@@ -7,6 +7,6 @@ export default defineComponent({
     upstream: h.url(),
   }),
   build: () => {
-    throw new Error("fixed render failure first 2026-07-08");
+    throw new Error("fixed render failure second 2026-07-08");
   },
 });
