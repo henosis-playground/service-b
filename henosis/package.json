@@ -7,11 +7,10 @@
     ".": "./src/index.ts"
   },
   "henosis": {
-    "component": "service-b",
-    "surface": true
+    "component": "service-b"
   },
   "dependencies": {
-    "@henosis/sdk": "github:henosis-playground/platform#path:packages/sdk",
+    "@henosis/platform-mock": "github:henosis-playground/platform#path:packages/platform-mock",
     "@henosis/service-a": "github:henosis-playground/service-a#path:henosis"
   },
   "devDependencies": {
