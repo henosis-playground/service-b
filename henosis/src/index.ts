@@ -6,8 +6,7 @@ export default defineComponent({
     app: h.url(),
     upstream: h.url(),
   }),
-  build: (_ctx, env) => ({
-    app: `https://service-b-${envName(env)}.henosis.example/app/metrics`,
-    upstream: serviceA.api,
-  }),
+  build: () => {
+    throw new Error("fixed render failure first 2026-07-08");
+  },
 });
