@@ -1,4 +1,4 @@
-import { defineComponent, envId, h } from "@henosis/platform-mock";
+import { defineComponent, envName, h } from "@henosis/platform-mock";
 import serviceA from "@henosis/service-a";
 
 export default defineComponent({
@@ -7,7 +7,7 @@ export default defineComponent({
     upstream: h.url(),
   }),
   build: (_ctx, env) => ({
-    app: `https://service-b-${envId(env)}.henosis.example`,
+    app: `https://service-b-${envName(env)}.henosis.example`,
     upstream: serviceA.api,
   }),
 });
