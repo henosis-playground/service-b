@@ -1,5 +1,7 @@
 # service-b
 
+Lifecycle verification C.
+
 Tiny dependency-free Node 22 HTTP service for the Henosis PoC.
 
 service-b depends on service-a through the Henosis v1 component workspace.
