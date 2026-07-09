@@ -12,6 +12,6 @@ export default defineComponent({
     app: `https://service-b-${envName(env)}.henosis.example/app/metrics`,
     upstream: serviceA.api,
     upstreamPort: serviceA.port,
-    test: serviceA.test,
+    test: serviceA.test2,
   }),
 });
