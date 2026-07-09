@@ -6,10 +6,12 @@ export default defineComponent({
     app: h.url(),
     upstream: h.url(),
     upstreamPort: h.number(),
+    test: h.string(),
   }),
   build: (_ctx, env) => ({
     app: `https://service-b-${envName(env)}.henosis.example/app/metrics`,
     upstream: serviceA.api,
     upstreamPort: serviceA.port,
+    test: serviceA.test,
   }),
 });
