@@ -1,1 +1,2 @@
 Live verification that the merge gate resolves the platform runner at invocation time.
+Final shared-recipe verification after the deploy runner path was exercised.
