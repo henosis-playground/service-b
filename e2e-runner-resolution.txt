@@ -1,0 +1,1 @@
+Live verification that the merge gate resolves the platform runner at invocation time.
