@@ -17,3 +17,5 @@ node src/server.js
 ```
 
 Live e2e marker: dev-only kill-switch verification (2026-07-10).
+
+Live e2e marker: preview borrowing and subscription propagation.
