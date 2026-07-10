@@ -12,10 +12,10 @@ export default defineComponent({
     prod: { replicas: 2 },
     preview: { replicas: 1 },
   },
-  build: (ctx, params) => {
+  build: (ctx, _params) => {
     const service = ctx.namespace("service-b").service("app", {
       targetPort: 3000,
-      replicas: params.replicas,
+      replicas: { min: serviceA.port, max: 3, targetCpu: 70 },
       resources: {
         requests: { cpu: "50m", memory: "64Mi" },
         limits: { cpu: "250m", memory: "256Mi" },
