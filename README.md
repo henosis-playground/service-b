@@ -15,3 +15,5 @@ Run locally:
 ```sh
 node src/server.js
 ```
+
+Live e2e marker: dev-only kill-switch verification (2026-07-10).
