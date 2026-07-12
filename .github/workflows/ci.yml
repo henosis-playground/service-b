@@ -7,6 +7,19 @@ permissions:
   contents: read
 
 jobs:
+  henosis-preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Typecheck Henosis component
+        run: |
+          corepack enable
+          pnpm --dir henosis install --frozen-lockfile
+          pnpm --dir henosis exec tsc --noEmit --pretty false
+
   image:
     runs-on: ubuntu-latest
     steps:
