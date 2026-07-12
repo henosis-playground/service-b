@@ -17,8 +17,8 @@ jobs:
       - name: Typecheck Henosis component
         run: |
           corepack enable
-          pnpm --dir henosis install --frozen-lockfile
-          pnpm --dir henosis exec tsc --noEmit --pretty false
+          corepack pnpm@11.3.0 --dir henosis install --frozen-lockfile
+          corepack pnpm@11.3.0 --dir henosis exec tsc --noEmit --pretty false
 
   image:
     runs-on: ubuntu-latest
