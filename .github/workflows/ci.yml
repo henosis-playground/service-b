@@ -11,13 +11,30 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: henosis-playground/platform
+          ref: ee1ed2d73bfa945f5568dd3b609294a3882bceed
+          path: .henosis-platform
+      - uses: actions/checkout@v4
+        with:
+          repository: henosis-playground/service-a
+          ref: f0a695d5b710ed1394435c64d9c29eee71cb847d
+          path: .henosis-service-a
       - uses: actions/setup-node@v4
         with:
-          node-version: "22"
+          node-version: "22.23.1"
       - name: Typecheck Henosis component
         run: |
           corepack enable
+          corepack pnpm@11.3.0 --dir .henosis-platform install --frozen-lockfile
+          corepack pnpm@11.3.0 --dir .henosis-platform build
           corepack pnpm@11.3.0 --dir henosis install --frozen-lockfile
+          rm -rf henosis/node_modules/@henosis/platform-k8s henosis/node_modules/@henosis/service-a
+          ln -s "$GITHUB_WORKSPACE/.henosis-platform/packages/platform-k8s" henosis/node_modules/@henosis/platform-k8s
+          ln -s "$GITHUB_WORKSPACE/.henosis-service-a/henosis" henosis/node_modules/@henosis/service-a
+          mkdir -p .henosis-service-a/henosis/node_modules/@henosis
+          ln -s "$GITHUB_WORKSPACE/.henosis-platform/packages/platform-k8s" .henosis-service-a/henosis/node_modules/@henosis/platform-k8s
           corepack pnpm@11.3.0 --dir henosis exec tsc --noEmit --pretty false
 
   image:
