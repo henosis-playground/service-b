@@ -1,5 +1,7 @@
 # service-b
 
+Public core graph presentation verification: 2026-07-12.
+
 Lifecycle verification C.
 
 Tiny dependency-free Node 22 HTTP service for the Henosis PoC.
