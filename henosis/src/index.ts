@@ -3,7 +3,7 @@ import serviceA from "@henosis/service-a";
 
 export default defineComponent({
   outputs: h.object({
-    app: h.url(),
+    app: h.url({ role: "ui" }),
     upstream: h.url(),
     upstreamPort: h.number(),
   }),
