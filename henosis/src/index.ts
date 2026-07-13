@@ -26,6 +26,8 @@ export default defineComponent({
       },
     });
 
+    const test = serviceA.test;
+
     return {
       app: `${service.url}/app/metrics`,
       upstream: serviceA.api,
