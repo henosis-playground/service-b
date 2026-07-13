@@ -14,7 +14,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: henosis-playground/platform
-          ref: ee1ed2d73bfa945f5568dd3b609294a3882bceed
+          ref: 55bb93a9e3f3bb8cd4e6fa60a87b49d8a6790eed
           path: .henosis-platform
       - uses: actions/checkout@v4
         with:
