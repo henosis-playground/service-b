@@ -7,6 +7,7 @@ export default defineComponent({
     upstream: h.url(),
     upstreamPort: h.number(),
   }),
+  borrowForPreview: "dev",
   params: {
     dev: { replicas: 1 },
     prod: { replicas: 2 },
