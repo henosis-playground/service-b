@@ -1,12 +1,23 @@
 {
-  "name": "service-b",
+  "name": "@henosis/service-b",
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "engines": {
-    "node": ">=22"
-  },
+  "exports": { ".": "./henosis/src/service-b.ts" },
+  "engines": { "node": ">=22" },
   "scripts": {
-    "start": "node src/server.js"
-  }
+    "start": "node src/server.js",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run henosis/test/service-b.test.ts"
+  },
+  "dependencies": {
+    "@henosis/core": "file:../platform/packages/core",
+    "@henosis/platform-k8s": "file:../platform/packages/platform-k8s",
+    "@henosis/service-a": "file:../service-a"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "vitest": "4.1.10"
+  },
+  "packageManager": "pnpm@11.3.0"
 }
