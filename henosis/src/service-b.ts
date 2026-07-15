@@ -5,6 +5,9 @@ import serviceA from "@henosis/service-a";
 export default defineComponent({
   name: "service-b",
   inputs: {
+    image: input.config(value.string(), {
+      default: "ghcr.io/henosis-playground/service-b@sha256:d854fb4344684f8003e77e19461877df4d05976a04505f988098e2025753c04f",
+    }),
     upstreamUrl: input.required(serviceA.outputs.api),
     upstreamPort: input.required(serviceA.outputs.port),
   },
@@ -23,7 +26,7 @@ export default defineComponent({
     const upstreamPort = inputs.upstreamPort.value;
     const service = emitServicePair(context, "app", {
       namespace: "service-b",
-      image: "service-b:latest",
+      image: inputs.image.value,
       targetPort: 3000,
       replicas: 1,
       env: {

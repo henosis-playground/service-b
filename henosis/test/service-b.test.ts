@@ -16,7 +16,7 @@ describe("service-b component", () => {
         upstream: "https://api.service-a.svc.cluster.local/api/v3/healthz",
         upstreamPort: 443,
       },
-      reads: ["upstreamPort", "upstreamUrl"],
+      reads: ["image", "upstreamPort", "upstreamUrl"],
     });
     expect(result.resources.map((resource) => resource.address)).toEqual([
       "k8s/object@1/service-b-namespace",
