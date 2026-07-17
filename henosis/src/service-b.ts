@@ -18,7 +18,10 @@ export default defineComponent({
     emitObject(ctx, "service-b-namespace", {
       apiVersion: "v1",
       kind: "Namespace",
-      metadata: { name: "service-b" },
+      metadata: {
+        name: "service-b",
+        labels: { "app.kubernetes.io/part-of": "henosis-demo" },
+      },
     });
     const upstream = a.outputs.api.value;
     const upstreamPort = a.outputs.port.value;
